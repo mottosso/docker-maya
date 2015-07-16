@@ -6,10 +6,8 @@ MAINTAINER marcus@abstractfactory.io
 # mechanism will ensure that this only happens once.
 RUN wget http://download.autodesk.com/us/support/files/maya_2016_service_pack_1/Autodesk_Maya_2016_SP1_EN_Linux_64bit.tgz -O maya.tgz && \
     mkdir /maya && tar -xvf maya.tgz -C /maya && \
-    rm maya.tgz
- 
-# Install Maya
-RUN rpm -Uvh /maya/Maya*.rpm && \
+    rm maya.tgz && \
+    rpm -Uvh /maya/Maya*.rpm && \
     rm -r /maya
 
 # Make mayapy the default Python
