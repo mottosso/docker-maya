@@ -11,9 +11,8 @@ RUN wget http://download.autodesk.com/us/support/files/maya_2016_service_pack_1/
     rm -r /maya
 
 # Make mayapy the default Python
-RUN rm -f /usr/bin/python && \
-    echo alias python="\"/usr/autodesk/maya/bin/mayapy\"" >> ~/.bashrc && \
-    echo alias pip="\"mayapy -m pip\"" >> ~/.bashrc
+RUN echo alias hpython="\"/usr/autodesk/maya/bin/mayapy\"" >> ~/.bashrc && \
+    echo alias hpip="\"mayapy -m pip\"" >> ~/.bashrc
 
 # Setup environment
 ENV MAYA_LOCATION=/usr/autodesk/maya/
