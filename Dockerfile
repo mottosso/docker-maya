@@ -6,18 +6,16 @@ MAINTAINER marcus@abstractfactory.io
 # mechanism will ensure that this only happens once.
 RUN wget http://download.autodesk.com/us/support/files/maya_2015_service_pack_4/Autodesk_Maya_2015_SP4_English_Linux.tgz -O maya.tgz && \
     mkdir /maya && tar -xvf maya.tgz -C /maya && \
-    rm maya.tgz
-
-# Install Maya
-RUN rpm -Uvh /maya/Maya*.rpm && \
+    rm maya.tgz && \
+    rpm -Uvh /maya/Maya*.rpm && \
     rm -r /maya
 
 # Make mayapy the default Python
-RUN rm -f /usr/bin/python && \
-    echo alias python=/usr/autodesk/maya/bin/mayapy >> ~/.bashrc
+RUN echo alias hpython="\"/usr/autodesk/maya/bin/mayapy\"" >> ~/.bashrc && \
+    echo alias hpip="\"mayapy -m pip\"" >> ~/.bashrc
 
 # Setup environment
-ENV MAYA_LOCATION=/usr/autodesk/maya2015-x64/
+ENV MAYA_LOCATION=/usr/autodesk/maya/
 ENV PATH=$MAYA_LOCATION/bin:$PATH
 
 RUN wget https://bootstrap.pypa.io/get-pip.py && \
