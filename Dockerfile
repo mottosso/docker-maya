@@ -28,7 +28,7 @@ ENV PYTHONPATH=/usr/lib/python2.6/site-packages
 RUN wget https://bootstrap.pypa.io/get-pip.py && \
     python2.6 get-pip.py
 
-RUN python2.6 -m pip install \
+RUN pip install \
  nose
 
 # Cleanup
