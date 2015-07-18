@@ -26,7 +26,8 @@ RUN wget https://bootstrap.pypa.io/get-pip.py && \
     python2.6 get-pip.py
 
 RUN pip install \
- nose
+ nose \
+ mock
 
 # Cleanup
 WORKDIR /root
