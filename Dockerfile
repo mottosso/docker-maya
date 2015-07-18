@@ -22,7 +22,8 @@ RUN wget https://bootstrap.pypa.io/get-pip.py && \
     mayapy get-pip.py
 
 RUN mayapy -m pip install \
- nose
+ nose \
+ mock
 
 # Cleanup
 WORKDIR /root
