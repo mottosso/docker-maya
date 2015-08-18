@@ -11,14 +11,14 @@ For more information about this image and its history, please see its the [GitHu
 To use this image and any of it's supported tags, use `docker run`.
 
 ```bash
-$ docker run --ti --rm mottosso/maya
+$ docker run -ti --rm mottosso/maya
 ```
 
 This will download the latest image of Maya. You can also specify a version directly.
 
 
 ```bash
-$ docker run --ti --rm mottosso/maya:2016sp1
+$ docker run -ti --rm mottosso/maya:2016sp1
 ```
 
 Images occupy around **5 gb** of virtual disk space once installed, and about **1.5 gb** of bandwidth to download.
