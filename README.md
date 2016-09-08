@@ -1,3 +1,5 @@
+[![](https://images.microbadger.com/badges/image/mottosso/maya.svg)](https://microbadger.com/images/mottosso/maya "Get your own image badge on microbadger.com")
+
 # Supported tags
 
 - `2013sp1`, `2013sp2`, `2014sp1`, `2014sp2`, `2014sp3`, `2014sp4`, `2015sp1`, `2015sp2`, `2015sp3`, `2015sp4`, `2015sp5`, `2015sp6`, `2016sp1`
