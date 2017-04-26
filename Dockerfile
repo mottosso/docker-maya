@@ -1,7 +1,7 @@
-FROM mottosso/mayabase-centos
- 
-MAINTAINER marcus@abstractfactory.io
- 
+FROM jeanim/mayabase-centos
+
+MAINTAINER jeanimator@gmail.com
+
 # Download and unpack distribution first, Docker's caching
 # mechanism will ensure that this only happens once.
 RUN wget http://download.autodesk.com/us/maya/service_packs/Autodesk_Maya_2013_SP1_English_Linux_64bit.tgz -O maya.tgz && \
