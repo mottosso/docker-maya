@@ -41,7 +41,7 @@ $ mayapy
 >>> exit()
 $ cp /root/maya/projects/default/scenes/my_scene.ma workdir/my_scene.ma
 $ exit
-$ cat workdir/my_scene.ma
+$ cat my_scene.ma
 ```
 
 # What's in this image?
