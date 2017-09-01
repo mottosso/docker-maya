@@ -30,7 +30,7 @@ Images occupy around **5 gb** of virtual disk space once installed, and about **
 This example will run the latest available version of Maya, create a new scene and save it in your current working directory.
 
 ```bash
-$ docker run -ti -v $(pwd)/root/workdir --rm mottosso/maya
+$ docker run -ti -v $(pwd):/root/workdir --rm mottosso/maya
 $ mayapy
 >>> from maya import standalone, cmds
 >>> standalone.initialize()
