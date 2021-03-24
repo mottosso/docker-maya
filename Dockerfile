@@ -8,6 +8,8 @@ RUN wget https://efulfillment.autodesk.com/NetSWDLD/2022/MAYA/7AA0A333-D72A-3C65
     mkdir /maya && tar -xvf maya.tgz -C /maya && \
     rm maya.tgz && \
     rpm -Uvh /maya/Packages/Maya*.rpm && \
+    rpm -Uvh /maya/Packages/Bifrost*.rpm && \
+    rpm -Uvh /maya/Packages/Pymel*.rpm && \
     rm -r /maya
 
 # Make mayapy the default Python
