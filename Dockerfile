@@ -1,10 +1,10 @@
 FROM mottosso/mayabase-centos7
 
-MAINTAINER marcus@abstractfactory.io
+MAINTAINER konstruktion@gmail.com
 
 # Download and unpack distribution first, Docker's caching
 # mechanism will ensure that this only happens once.
-RUN wget https://up.autodesk.com/2020/MAYA/18BBDBD5-9A15-4095-8D5E-089938EB8E24/Autodesk_Maya_2020_1_ML_Linux_64bit.tgz -O maya.tgz && \
+RUN wget https://efulfillment.autodesk.com/NetSWDLD/2022/MAYA/7AA0A333-D72A-3C65-AB0F-0FE0F802014A/ESD/Autodesk_Maya_2022_ML_Linux_64bit.tgz -O maya.tgz && \
     mkdir /maya && tar -xvf maya.tgz -C /maya && \
     rm maya.tgz && \
     rpm -Uvh /maya/Packages/Maya*.rpm && \
