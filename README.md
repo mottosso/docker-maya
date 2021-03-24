@@ -2,7 +2,7 @@
 
 # Supported tags
 
-- `2013sp1`, `2013sp2`, `2014sp1`, `2014sp2`, `2014sp3`, `2014sp4`, `2015sp1`, `2015sp2`, `2015sp3`, `2015sp4`, `2015sp5`, `2015sp6`, `2016sp1`, `2017`, `2018`, `2019`, `2020` and `2020sp1`
+- `2013sp1`, `2013sp2`, `2014sp1`, `2014sp2`, `2014sp3`, `2014sp4`, `2015sp1`, `2015sp2`, `2015sp3`, `2015sp4`, `2015sp5`, `2015sp6`, `2016sp1`, `2017`, `2018`, `2019`, `2019.3`, `2020`, `2020sp1` and `2022`
 
 For more information about this image and its history, please see its the [GitHub repository][1].
 
@@ -20,7 +20,7 @@ Without a "tag", this would download the latest available image of Maya. You can
 
 
 ```bash
-$ docker run -ti --rm mottosso/maya:2016sp1
+$ docker run -ti --rm mottosso/maya:2022
 ```
 
 Images occupy around **5 gb** of virtual disk space once installed, and about **1.5 gb** of bandwidth to download.
