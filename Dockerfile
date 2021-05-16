@@ -1,10 +1,10 @@
-FROM mottosso/mayabase-centos
+FROM mottosso/mayabase-centos7
  
 MAINTAINER marcus@abstractfactory.io
  
 # Download and unpack distribution first, Docker's caching
 # mechanism will ensure that this only happens once.
-RUN wget https://edutrial.autodesk.com/NET18SWDLD/2018/MAYA/ESD/Autodesk_Maya_2018_EN_Linux_64bit.tgz -O maya.tgz && \
+RUN wget https://up.autodesk.com/2018/MAYA/6519C211-4CE2-4FB5-9F81-93C99FD75A5D/Autodesk_Maya_2018_7_Update_Linux_64bit.tgz -O maya.tgz && \
     mkdir /maya && tar -xvf maya.tgz -C /maya && \
     rm maya.tgz && \
     rpm -Uvh /maya/Maya*.rpm && \
