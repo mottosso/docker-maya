@@ -1,0 +1,63 @@
+FROM rockylinux:8.9
+
+MAINTAINER konstruktion@gmail.com
+
+RUN yum -y install \
+        mesa-libGLw \
+        mesa-libGLU \
+        libglvnd*64
+
+RUN yum -y install \
+        libXpm \
+        libXcomposite \
+        gamin \
+        e2fsprogs-libs \
+        glibc \
+        zlib \
+        libSM \
+        libICE \
+        tcsh \
+        pulseaudio-libs \
+        libxslt \
+        alsa-lib
+
+RUN yum -y install \
+        xorg-x11-fonts-ISO8859-1-100dpi \
+        xorg-x11-fonts-ISO8859-1-75dpi \
+        liberation-mono-fonts \
+        liberation-fonts-common \
+        liberation-sans-fonts \
+        liberation-serif-fonts
+
+RUN yum -y install \
+    libpng12 \
+    libtiff && \
+        ln -s /usr/lib64/libtiff.so.5 /usr/lib64/libtiff.so.3
+
+RUN yum update -y && \
+    yum install -y \
+        nano \
+        csh \
+        elfutils \
+        gcc \
+        git \
+        mesa-libGL-devel \
+        tcsh \
+        xorg-x11-server-Xorg \
+        xorg-x11-server-Xvfb \
+        wget
+
+RUN dnf groupinstall -y "Server with GUI" --allowerasing && \
+    yum clean all
+
+ENV LIBQUICKTIME_PLUGIN_DIR=/usr/autodesk/maya/lib
+ENV DISPLAY=:99
+
+# Start a virtual screen inside of container, such that we can call cmds.playblast etc.
+RUN echo "# Start Xvfb" >> ~/.bashrc && \
+    echo "Xvfb :99 -screen 0 1024x768x16 2>/dev/null &" >> ~/.bashrc && \
+    echo "while ! ps aux | \grep -q '[0]:00 Xvfb :99 -screen 0 1024x768x16';" >> ~/.bashrc && \
+    echo "  do echo 'Waiting for Xvfb...'; sleep 1; done" >> ~/.bashrc
+
+# Cleanup
+WORKDIR /root
