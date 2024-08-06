@@ -51,7 +51,7 @@ This image builds on [mayabase-centos][2] which has the following software insta
 - [git](https://git-scm.com/)
 - [pip](https://pip.pypa.io/en/stable/)
 
-Each tag represents a particular version of Maya, such as 2016 SP1. In this image, `python` is an alias to `maya/bin/mayapy` which has the following Python packages installed via `pip`.
+Each tag represents a particular version of Maya, such as 2016 SP1. In this image, `mayapy` is an alias to `maya/bin/mayapy` which has the following Python packages installed via `pip`.
 
 - [nose](http://nose.readthedocs.org/en/latest/testing.html)
 
