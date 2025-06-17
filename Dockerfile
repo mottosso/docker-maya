@@ -4,11 +4,14 @@ MAINTAINER konstruktion@gmail.com
 
 # Download and unpack distribution first, Docker's caching
 # mechanism will ensure that this only happens once.
-RUN wget https://efulfillment.autodesk.com/NetSWDLD/2025/MAYA/1AAEB4DA-FE7D-3C8A-A4F4-C217F55C55BA/ESD/Autodesk_Maya_2025_Linux_64bit.tgz -O maya.tgz && \
+RUN wget https://efulfillment.autodesk.com/NetSWDLD/prd/2026/MAYA/A9AFE7E8-904B-3EEC-9689-0D2FD263FF90/Autodesk_Maya_2026_1_Update_ML_Linux_64bit.tgz -O maya.tgz && \
     mkdir /maya && tar -xvf maya.tgz -C /maya && \
     rm maya.tgz && \
     rpm -Uvh /maya/Packages/Maya*.rpm && \
     rm -r /maya
+
+# New dependencies for 2026
+RUN dnf install -y libva libvdpau
 
 # Make mayapy the default Python
 RUN echo alias hpython="\"/usr/autodesk/maya/bin/mayapy\"" >> ~/.bashrc && \
