@@ -4,7 +4,7 @@ MAINTAINER konstruktion@gmail.com
 
 # Download and unpack distribution first, Docker's caching
 # mechanism will ensure that this only happens once.
-RUN wget https://efulfillment.autodesk.com/NetSWDLD/prd/2026/MAYA/A9AFE7E8-904B-3EEC-9689-0D2FD263FF90/Autodesk_Maya_2026_1_Update_ML_Linux_64bit.tgz -O maya.tgz && \
+RUN wget https://efulfillment.autodesk.com/NetSWDLD/prd/2027/MAYA/AF0651C6-C89C-3F6B-BCC3-F195B93495D3/SFX//Autodesk_Maya_2027_1_Update_Linux_64bit.tgz -O maya.tgz && \
     mkdir /maya && tar -xvf maya.tgz -C /maya && \
     rm maya.tgz && \
     rpm -Uvh /maya/Packages/Maya*.rpm && \
